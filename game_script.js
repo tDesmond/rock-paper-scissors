@@ -1,5 +1,15 @@
 
 const CHOICES = ["ROCK", "PAPER", "SCISSORS"]
+
+const PLAYER_CHOICE = document.querySelector(".player-choice")
+const RESULT_TEXT = document.querySelector(".result")
+
+const ROCK_BUTTON = document.querySelector("#rock-btn")
+const PAPER_BUTTON = document.querySelector("#paper-btn")
+const SCISSORS_BUTTON = document.querySelector("#scissors-btn")
+const PLAY_BUTTON = document.querySelector("#play-btn")
+
+
 let computerSelection, playerSelection, playerScore=0, computerScore=0
 
 function radomInt(){
@@ -39,13 +49,18 @@ function playRound(computer, player){
     }
 }
 
+function setPlayerChoice(choice){
+    playerSelection = choice
+    PLAYER_CHOICE.textContent = playerSelection
+}
+
 function game(){
-    for(let i = 0; i < 5; i ++){
-        computerSelection = getComputerChoice()
-        playerSelection = prompt("ROCK, PAPER, SCISSORS?").toUpperCase()
-        console.log(playRound(computerSelection, playerSelection))
-    }
-    console.log("Player: " + playerScore + " Computer: " + computerScore)
+
+    ROCK_BUTTON.onclick = () => setPlayerChoice("ROCK")
+    PAPER_BUTTON.onclick = () => setPlayerChoice("PAPER")
+    SCISSORS_BUTTON.onclick = () => setPlayerChoice("SCISSORS")
+
+    PLAY_BUTTON.onclick = () => RESULT_TEXT.textContent = (playRound(getComputerChoice(), playerSelection))
 }
 
 game()
