@@ -1,17 +1,13 @@
 
 const CHOICES = ["ROCK", "PAPER", "SCISSORS"]
+
 const PLAYER_CHOICE = document.querySelector(".player-choice")
 const RESULT_TEXT = document.querySelector(".result")
-
 
 const ROCK_BUTTON = document.querySelector("#rock-btn")
 const PAPER_BUTTON = document.querySelector("#paper-btn")
 const SCISSORS_BUTTON = document.querySelector("#scissors-btn")
 const PLAY_BUTTON = document.querySelector("#play-btn")
-
-
-
-// promptText.textContent = "lamfknafnjadkjnadkfn"
 
 
 let computerSelection, playerSelection, playerScore=0, computerScore=0
@@ -59,6 +55,7 @@ function setPlayerChoice(choice){
 }
 
 function game(){
+
     ROCK_BUTTON.onclick = () => setPlayerChoice("ROCK")
     PAPER_BUTTON.onclick = () => setPlayerChoice("PAPER")
     SCISSORS_BUTTON.onclick = () => setPlayerChoice("SCISSORS")
